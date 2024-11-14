@@ -29,5 +29,8 @@ $(BUILD)/%.o: $(SRC)/%.c
 run:
 	$(TARGET)
 
+test:
+	$(BUILD)/test
+
 clean:
 	rm -rf $(BUILD)
