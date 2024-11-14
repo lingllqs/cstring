@@ -14,15 +14,13 @@ String *new_string(const char *str) {
         die("malloc string:");
     }
 
-    uint32_t str_len = strlen(str);
-    string->str = malloc((str_len + 1));
+    string->str = strdup(str);
     if (NULL == string->str) {
         free(string);
         perror("malloc str");
         return NULL;
     }
 
-    string->str = strdup(str);
 
     StrAttr str_attr = get_str_attr(str);
     string->str_attr.length = str_attr.length;
