@@ -12,11 +12,11 @@ int main(int argc, char *argv[]) {
     StrAttr str_attr2 = get_str_attr(str2);
     StrAttr str_attr3 = get_str_attr(str3);
 
-    printf("length: %d\nzh_nums: %d\n", str_attr.cell_len, str_attr.zh_nums);
-    printf("length: %d\nzh_nums: %d\n", str_attr2.cell_len, str_attr2.zh_nums);
-    printf("length: %d\nzh_nums: %d\n", str_attr3.cell_len, str_attr3.zh_nums);
+    printf("nlength: %d\nzh_count: %d\n", str_attr.nlength, str_attr.zh_count);
+    printf("nlength: %d\nzh_count: %d\n", str_attr2.nlength, str_attr2.zh_count);
+    printf("nlength: %d\nzh_count: %d\n", str_attr3.nlength, str_attr3.zh_count);
 
-    int max_length = max(str_attr.cell_len, max(str_attr2.cell_len, str_attr3.cell_len));
+    int max_length = max(str_attr.nlength, max(str_attr2.nlength, str_attr3.nlength));
 
     printf("+");
     for (int i = 0; i < max_length + 2; i++) {
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     int a = 3 > 5 ? 3 : 5;
 
     printf("|");
-    printf(" %-*s ", str_attr.cell_len + str_attr.zh_nums, str);
+    printf(" %-*s ", str_attr.nlength + str_attr.zh_count, str);
     printf("|\n");
     printf("------------------------------------------------\n");
     String *string1 = new_string("Hello 世界");
